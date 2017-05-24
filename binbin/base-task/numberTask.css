@@ -1,0 +1,26 @@
+#leftOut,
+#leftIn {
+  margin-left: 20px;
+}
+body {
+  margin-top: 20px;
+}
+#numberWraper {
+  padding-left: 0px;
+  margin-top: 20px;
+}
+#numberWraper li {
+  float: left;
+  display: inline-block;
+  width: 70px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background-color: indianred;
+  text-align: center;
+  cursor: pointer;
+  list-style: none;
+}
+#numberWraper :nth-child(n+2) {
+  margin-left: 20px;
+}
