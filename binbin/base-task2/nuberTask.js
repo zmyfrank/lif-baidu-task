@@ -69,11 +69,11 @@ function delNum(statu) {
 	}
 	if(statu===1){
 		let firstChild = numberWraper.firstChild;
-		alert(`您已成功删除${firstChild.innerHTML}！`);
-		firstChild.remove();
+		alert(`您已成功删除${firstChild.style.height.replace('%',"")}！`);
+		firstChild.remove()
 	}else if(statu===2){
 		let lastChild = numberWraper.lastChild;
-		alert(`您已成功删除${lastChild.innerHTML}`);
+		alert(`您已成功删除${lastChild.style.height.replace('%',"")}！`);
 		lastChild.remove()
 	}
 }
