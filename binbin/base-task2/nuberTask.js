@@ -8,13 +8,20 @@ let value;
 let nameIput = document.getElementById('numInput');
 //获取添加元素
 let numberWraper = document.getElementById('numberWraper');
+//新建数组储存写入数据
+let dataArr = [];
 //检查是否是数字
 function cheack() {
 	let testMethod = /^[0-9]*$/;
-	if (!value||!(testMethod.test(value))||value>100){
-		alert('只能输入1-100的数字');
+	//没有值、不为数字、大于100、小于10判断
+	if (!value||!(testMethod.test(value))||value>100||value<10){
+		alert('只能输入10-100的数字');
 		return false
-	}else {
+		//控制最多只能60个
+	}else if(numberWraper.getElementsByTagName('li').length>60){
+		alert('最多只能60个哦！')
+		return false
+	} else {
 		return true
 	}
 }
@@ -22,7 +29,8 @@ function cheack() {
 function addClickFn(liSum) {
 	for(let i=0;i<liSum.length;i++){
 		liSum[i].onclick = function () {
-			alert(`${this.innerHTML},已删除！`);
+			//删除的时候提示
+			alert(`${this.style.height.replace('%',"")},已删除！`);
 			this.remove();
 			//移除后需要再添加一次，因为元素减少了
 			addClickFn(liSum);
@@ -36,13 +44,17 @@ function addNum(statu) {
 	if (!cheackResult){
 		return
 	}
-	li.innerHTML = value;
+	//li.innerHTML = value;
+	//设置高度
+	li.style.height=`${value}%`
 	if (statu===1){
 		//左添加
-		numberWraper.insertBefore(li,numberWraper.childNodes[0])
+		numberWraper.insertBefore(li,numberWraper.childNodes[0]);
+		dataArr.unshift(+value);
 	}else if(statu===2){
 		//右添加
 		numberWraper.append(li)
+		dataArr.push(+value);
 	}
 	//获取每一个循环出来的元素，添加点击事件
 	let liSum = numberWraper.getElementsByTagName('li');
@@ -66,6 +78,17 @@ function delNum(statu) {
 	}
 }
 
+function sort() {
+	let sum = numberWraper.getElementsByTagName('li');
+	console.log(sum);
+	//冒泡排序
+	for (let i = 0;i<sum.length;i++){
+		for (let j = 0 , s = sum.length-i;j<s;j++)
+		setTimeout(function () {
+		
+		},i*1000)
+	}
+}
 (function () {
 	//给值绑定change事件
 	nameIput.addEventListener('change',function () {

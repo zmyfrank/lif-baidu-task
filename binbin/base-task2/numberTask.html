@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="numberTask.css">
+</head>
+<body>
+<div class="container">
+    <input type="text" id="numInput">
+    <input class="btn btn-success" type="button" value="左侧入" onclick="addNum(1)">
+    <input class="btn btn-success" type="button" value="右侧入" onclick="addNum(2)">
+    <input class="btn btn-success" type="button" value="左侧出" onclick="delNum(1)">
+    <input class="btn btn-success" type="button" value="右侧出" onclick="delNum(2)">
+    <input class="btn btn-success" type="button" value="排序" onclick="sort()">
+    <ul id="numberWraper" class="clear-fix">
+    </ul>
+</div>
+</body>
+<script src="nuberTask.js"></script>
+</html>
