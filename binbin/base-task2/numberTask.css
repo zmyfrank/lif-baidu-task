@@ -22,5 +22,5 @@ body {
   list-style: none;
 }
 #numberWraper :nth-child(n+2) {
-  margin-left: 20px;
+  margin-left: 3px;
 }

@@ -19,7 +19,7 @@ function cheack() {
 		return false
 		//控制最多只能60个
 	}else if(numberWraper.getElementsByTagName('li').length>60){
-		alert('最多只能60个哦！')
+		alert('最多只能60个哦！');
 		return false
 	} else {
 		return true
@@ -46,14 +46,14 @@ function addNum(statu) {
 	}
 	//li.innerHTML = value;
 	//设置高度
-	li.style.height=`${value}%`
+	li.style.height=`${value}%`;
 	if (statu===1){
 		//左添加
 		numberWraper.insertBefore(li,numberWraper.childNodes[0]);
 		dataArr.unshift(+value);
 	}else if(statu===2){
 		//右添加
-		numberWraper.append(li)
+		numberWraper.append(li);
 		dataArr.push(+value);
 	}
 	//获取每一个循环出来的元素，添加点击事件
@@ -83,10 +83,21 @@ function sort() {
 	console.log(sum);
 	//冒泡排序
 	for (let i = 0;i<sum.length;i++){
-		for (let j = 0 , s = sum.length-i;j<s;j++)
-		setTimeout(function () {
-		
-		},i*1000)
+		for (let j = 0 , s = sum.length-i;j<s;j++){
+            setTimeout(function () {
+            	if(!!sum[j+1]){
+            		//取出每一个的高度
+            		let firstH = +sum[j].style.height.replace('%',"");
+            		let secondH = +sum[j+1].style.height.replace('%',"");
+            		//对比高度，开始改变
+                    if (firstH>secondH){
+                        let height = firstH;
+                        sum[j].style.height = `${secondH}%`;
+                        sum[j+1].style.height = `${height}%`;
+                    }
+				}
+            },i*1000)
+		}
 	}
 }
 (function () {
