@@ -9,14 +9,11 @@
 <body>
 <div class="container">
     <input type="text" id="numInput">
-    <input class="btn btn-success" type="button" value="左侧入" id="leftIn">
-    <input class="btn btn-success" type="button" value="右侧入" id="rightIn">
-    <input class="btn btn-success" type="button" value="左侧出" id="leftOut">
-    <input class="btn btn-success" type="button" value="右侧出" id="rightOut">
+    <input class="btn btn-success" type="button" value="左侧入" onclick="addNum(1)">
+    <input class="btn btn-success" type="button" value="右侧入" onclick="addNum(2)">
+    <input class="btn btn-success" type="button" value="左侧出" onclick="delNum(1)">
+    <input class="btn btn-success" type="button" value="右侧出" onclick="delNum(2)">
     <ul id="numberWraper">
-        <li>123123</li>
-        <li>123123</li>
-        <li>1231231</li>
     </ul>
 </div>
 </body>

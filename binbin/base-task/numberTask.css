@@ -12,9 +12,9 @@ body {
 #numberWraper li {
   float: left;
   display: inline-block;
-  width: 70px;
   height: 50px;
   line-height: 50px;
+  padding: 0 10px 0 10px;
   color: #fff;
   background-color: indianred;
   text-align: center;
