@@ -46,22 +46,22 @@ function addNum(statu) {
 	}
 	//获取每一个循环出来的元素，添加点击事件
 	let liSum = numberWraper.getElementsByTagName('li');
-	addClickFn(liSum)
+	addClickFn(liSum);
 }
 //删除方法,1左2右
 function delNum(statu) {
 	let liSum = numberWraper.getElementsByTagName('li');
 	if (liSum.length===0){
-		alert('没有可以删除的元素！')
+		alert('没有可以删除的元素！');
 		return
 	}
 	if(statu===1){
 		let firstChild = numberWraper.firstChild;
-		alert(`您已成功删除${firstChild.innerHTML}！`)
+		alert(`您已成功删除${firstChild.innerHTML}！`);
 		firstChild.remove();
 	}else if(statu===2){
 		let lastChild = numberWraper.lastChild;
-		alert(`您已成功删除${lastChild.innerHTML}`)
+		alert(`您已成功删除${lastChild.innerHTML}`);
 		lastChild.remove()
 	}
 }
