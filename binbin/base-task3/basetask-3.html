@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .text-a {
+            width: 1000px;
+            height: 212px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <textarea id="textArea" class="text-a" placeholder="使用=符号分割每一个组"></textarea>
+    </div>
+    <button type="button" class="btn btn-info" onclick="add()">插进去！</button>
+    <div>
+        <input id="inputV" type="text">
+        <button type="button" class="btn btn-info ">查询！</button>
+    </div>
+    <div id="wraper"></div>
+</div>
+</body>
+<script>
+    let dataValue,input,wraper,textArea,textValue;
+    input = document.getElementById('inputV');
+    textArea = document.getElementById('textArea');
+    function add() {
+	    let arr = textValue.split('=');
+	    console.log(arr)
+    }
+
+    (function () {
+        input.addEventListener('change',()=>dataValue=input.value);
+	    textArea.addEventListener('change',function () {
+		    textValue=textArea.value
+	    });
+    })()
+</script>
+</html>
