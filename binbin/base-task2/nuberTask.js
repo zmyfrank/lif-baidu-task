@@ -100,6 +100,7 @@ function sort() {
 		}
 	}
 }
+/*添加一段注释，用于测试是否能够使用git*/
 (function () {
 	//给值绑定change事件
 	nameIput.addEventListener('change',function () {
